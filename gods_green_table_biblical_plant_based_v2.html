@@ -1,0 +1,439 @@
+
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,400&display=swap" rel="stylesheet">
+<h2 class="sr-only">God's Green Table: A biblical and scientific case for plant-based living</h2>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+.doc{font-family:'Source Serif 4',Georgia,serif;max-width:680px}
+.hero{text-align:center;padding:2.5rem 1.5rem 1.75rem;border-bottom:0.5px solid var(--color-border-tertiary)}
+.hero-icon{font-size:40px;color:var(--color-text-success);margin-bottom:0.75rem}
+.hero h1{font-family:'Lora',Georgia,serif;font-size:1.9rem;font-weight:500;color:var(--color-text-primary);line-height:1.25;margin-bottom:0.25rem}
+.hero h2{font-family:'Lora',Georgia,serif;font-size:1.1rem;font-weight:400;font-style:italic;color:var(--color-text-secondary);margin-bottom:0.875rem}
+.hero p{font-size:14px;color:var(--color-text-secondary);line-height:1.7;max-width:500px;margin:0 auto}
+.toc{background:var(--color-background-secondary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:1.125rem 1.375rem;margin:1.25rem 1rem}
+.toc-label{font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:.09em;color:var(--color-text-secondary);margin-bottom:.625rem}
+.toc ol{list-style:decimal;padding-left:1.25rem;display:grid;grid-template-columns:1fr 1fr;gap:3px 1rem}
+.toc li{font-size:13px;color:var(--color-text-secondary);line-height:1.7}
+.toc .new-item{color:var(--color-text-warning);font-weight:500}
+.sec{padding:1.5rem 1rem .75rem;border-top:.5px solid var(--color-border-tertiary)}
+.sec-label{font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:.1em;color:var(--color-text-success);margin-bottom:.35rem}
+.sec-label-warn{font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:.1em;color:var(--color-text-warning);margin-bottom:.35rem}
+.sec h2{font-family:'Lora',Georgia,serif;font-size:1.25rem;font-weight:500;color:var(--color-text-primary);line-height:1.35;margin-bottom:.7rem}
+.sec p{font-size:14.5px;line-height:1.78;color:var(--color-text-primary);margin-bottom:.7rem}
+.verse{background:var(--color-background-warning);border-left:3px solid var(--color-border-warning);border-radius:0 var(--border-radius-md) var(--border-radius-md) 0;padding:.875rem 1.125rem;margin:.875rem 0}
+.verse-ref{font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:.08em;color:var(--color-text-warning);margin-bottom:.35rem}
+.verse-text{font-family:'Lora',Georgia,serif;font-size:13.5px;font-style:italic;line-height:1.75;color:var(--color-text-primary)}
+.verse-danger{background:var(--color-background-danger);border-left:3px solid var(--color-border-danger);border-radius:0 var(--border-radius-md) var(--border-radius-md) 0;padding:.875rem 1.125rem;margin:.875rem 0}
+.verse-danger .verse-ref{color:var(--color-text-danger)}
+.verse-danger .verse-text{font-family:'Lora',Georgia,serif;font-size:13.5px;font-style:italic;line-height:1.75;color:var(--color-text-primary)}
+.sci{background:var(--color-background-success);border:.5px solid var(--color-border-success);border-radius:var(--border-radius-lg);padding:.875rem 1.125rem;margin:.875rem 0}
+.sci-label{display:flex;align-items:center;gap:6px;font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:.08em;color:var(--color-text-success);margin-bottom:.4rem}
+.sci p{font-size:13.5px;line-height:1.7;color:var(--color-text-primary);margin:0}
+.warn-box{background:var(--color-background-warning);border:.5px solid var(--color-border-warning);border-radius:var(--border-radius-lg);padding:.875rem 1.125rem;margin:.875rem 0}
+.warn-label{display:flex;align-items:center;gap:6px;font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:.08em;color:var(--color-text-warning);margin-bottom:.4rem}
+.warn-box p{font-size:13.5px;line-height:1.7;color:var(--color-text-primary);margin:0}
+.danger-box{background:var(--color-background-danger);border:.5px solid var(--color-border-danger);border-radius:var(--border-radius-lg);padding:.875rem 1.125rem;margin:.875rem 0}
+.danger-label{display:flex;align-items:center;gap:6px;font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:.08em;color:var(--color-text-danger);margin-bottom:.4rem}
+.danger-box p{font-size:13.5px;line-height:1.7;color:var(--color-text-primary);margin:0}
+.info-box{background:var(--color-background-info);border:.5px solid var(--color-border-info);border-radius:var(--border-radius-lg);padding:1rem 1.25rem;margin:.875rem 0}
+.info-box p{font-size:13.5px;line-height:1.75;color:var(--color-text-primary);margin:0}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin:.875rem 0}
+.stat{background:var(--color-background-secondary);border:.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-md);padding:.875rem;text-align:center}
+.stat-n{font-family:'Lora',Georgia,serif;font-size:1.55rem;font-weight:500;color:var(--color-text-success);display:block;line-height:1.2}
+.stat-n-warn{font-family:'Lora',Georgia,serif;font-size:1.55rem;font-weight:500;color:var(--color-text-warning);display:block;line-height:1.2}
+.stat-l{font-size:12px;color:var(--color-text-secondary);line-height:1.45;margin-top:5px}
+.vgrid{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin:.875rem 0}
+.mv{background:var(--color-background-warning);border-radius:var(--border-radius-md);padding:.8rem .95rem}
+.mv-r{font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:.07em;color:var(--color-text-warning);margin-bottom:4px}
+.mv-t{font-size:13px;font-style:italic;line-height:1.65;color:var(--color-text-primary)}
+.pandemic-row{display:flex;gap:.875rem;align-items:flex-start;padding:.75rem 0;border-bottom:.5px solid var(--color-border-tertiary)}
+.pandemic-row:last-child{border-bottom:none}
+.p-badge{background:var(--color-background-danger);border:.5px solid var(--color-border-danger);border-radius:var(--border-radius-md);padding:4px 10px;font-size:12px;font-weight:500;color:var(--color-text-danger);white-space:nowrap;flex-shrink:0;align-self:flex-start;margin-top:2px}
+.p-text{font-size:13.5px;line-height:1.65;color:var(--color-text-primary)}
+.p-text strong{font-weight:500}
+.arc-item{background:var(--color-background-secondary);border:.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:1rem 1.125rem;display:flex;gap:.875rem;align-items:flex-start;margin-bottom:8px}
+.arc-icon{font-size:20px;color:var(--color-text-success);flex-shrink:0;margin-top:2px}
+.arc-t{font-family:'Lora',Georgia,serif;font-size:.95rem;font-weight:500;color:var(--color-text-primary);margin-bottom:3px}
+.arc-d{font-size:13px;line-height:1.65;color:var(--color-text-secondary)}
+.cta{background:var(--color-background-success);border:.5px solid var(--color-border-success);border-radius:var(--border-radius-lg);padding:1.5rem;margin:1.5rem 1rem;text-align:center}
+.cta h2{font-family:'Lora',Georgia,serif;font-size:1.2rem;font-weight:500;color:var(--color-text-success);margin-bottom:.75rem}
+.cta p{font-size:14px;line-height:1.78;color:var(--color-text-primary)}
+.footer{text-align:center;padding:1.25rem 1rem 1.5rem;border-top:.5px solid var(--color-border-tertiary);font-size:12px;color:var(--color-text-tertiary);line-height:1.65}
+.new-badge{display:inline-block;background:var(--color-background-warning);border:.5px solid var(--color-border-warning);border-radius:var(--border-radius-md);font-size:10px;font-weight:500;text-transform:uppercase;letter-spacing:.07em;color:var(--color-text-warning);padding:2px 7px;margin-left:8px;vertical-align:middle}
+</style>
+
+<div class="doc">
+
+<div class="hero">
+  <div class="hero-icon"><i class="ti ti-leaf" aria-hidden="true"></i></div>
+  <h1>God's Green Table</h1>
+  <h2>The Biblical &amp; Scientific Case for Plant-Based Living</h2>
+  <p>A study of what Scripture says about diet, animals, and creation — from Eden to the New Jerusalem — alongside what modern science confirms.</p>
+</div>
+
+<div class="toc">
+  <div class="toc-label">Contents</div>
+  <ol>
+    <li>God's original diet</li>
+    <li>After the fall — still plants</li>
+    <li>God's provision: manna</li>
+    <li>Daniel's diet test</li>
+    <li>Isaiah and Revelation</li>
+    <li>New Testament passages</li>
+    <li>Wisdom literature</li>
+    <li>Dominion as stewardship</li>
+    <li>Animal agriculture and the Bible</li>
+    <li>Modern science confirms</li>
+    <li class="new-item">Pandemics: the biblical warning</li>
+  </ol>
+</div>
+
+<div class="sec" style="border-top:none">
+  <p>The Bible is not silent on diet. From Genesis to Revelation, Scripture traces a clear arc: a plant-based creation declared "very good," a compassionate call to stewardship over all living creatures, and a restored future where no creature hurts or destroys. This document gathers that biblical testimony alongside the findings of modern nutritional science, environmental research, and public health data — all pointing in the same direction.</p>
+</div>
+
+<div class="sec">
+  <div class="sec-label">Section 1 — The beginning</div>
+  <h2>God's original diet: a plant-based creation</h2>
+  <p>The very first dietary instruction God gives to humanity — and to all animals — is entirely plant-based. This was the world God looked at and called "very good."</p>
+  <div class="verse">
+    <div class="verse-ref">Genesis 1:29-30</div>
+    <div class="verse-text">"And God said, 'Behold, I have given you every plant yielding seed that is on the face of all the earth, and every tree with seed in its fruit. You shall have them for food. And to every beast of the earth and to every bird of the heavens and to everything that creeps on the earth, everything that has the breath of life, I have given every green plant for food.' And it was so."</div>
+  </div>
+  <div class="verse">
+    <div class="verse-ref">Genesis 1:31</div>
+    <div class="verse-text">"And God saw everything that he had made, and behold, it was very good."</div>
+  </div>
+  <p>This declaration of "very good" follows a world where all creatures — humans and animals alike — ate only plants. No death. No bloodshed. No suffering. God's first verdict on creation was delivered over a vegan world.</p>
+  <div class="verse">
+    <div class="verse-ref">Genesis 2:15</div>
+    <div class="verse-text">"The Lord God took the man and put him in the garden of Eden to work it and keep it."</div>
+  </div>
+  <p>The Hebrew word <em>shamar</em> ("keep") means to guard, protect, preserve — the same word used when God commands Israel to "keep" His commandments. It is a sacred obligation of stewardship, not a license for exploitation.</p>
+</div>
+
+<div class="sec">
+  <div class="sec-label">Section 2 — The fall</div>
+  <h2>After the fall: still plant-based</h2>
+  <p>After Adam and Eve's disobedience, God expands the human diet — but not to meat. He directs them to the "plants of the field": grains, legumes, root vegetables. Meat comes later, as a post-flood concession under fallen conditions, not a divine ideal.</p>
+  <div class="verse">
+    <div class="verse-ref">Genesis 3:17-18</div>
+    <div class="verse-text">"Cursed is the ground because of you; in pain you shall eat of it all the days of your life; thorns and thistles it shall bring forth for you; and you shall eat the plants of the field."</div>
+  </div>
+  <div class="info-box">
+    <p>When God permitted Noah to eat meat after the flood (Genesis 9:3), Jewish and Christian theologians from Maimonides to John Wesley have understood this as a divine concession to human weakness — not God's ideal. Notably, human lifespans dropped dramatically after this permission was granted: from 900+ years (pre-flood, plant-based) to 600, 438, 239, 175, and eventually 70 years (Psalm 90:10) as meat entered the diet. The correlation is present throughout the text.</p>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-label">Section 3 — God's provision</div>
+  <h2>God's chosen food: manna from heaven</h2>
+  <p>When God had direct control over Israel's diet in the wilderness, He did not send meat. He sent grain-based bread from heaven. When the Israelites demanded meat, God's anger was kindled — and the consequences were fatal.</p>
+  <div class="verse">
+    <div class="verse-ref">Exodus 16:4</div>
+    <div class="verse-text">"Then the Lord said to Moses, 'I am going to rain bread from heaven for you, and each day the people shall go out and gather enough for that day.'"</div>
+  </div>
+  <div class="verse">
+    <div class="verse-ref">Psalm 78:24-25</div>
+    <div class="verse-text">"He rained down on them manna to eat and gave them the grain of heaven. Man ate of the bread of the angels; he sent them food in abundance."</div>
+  </div>
+  <div class="verse">
+    <div class="verse-ref">Numbers 11:4-6, 33 — the graves of craving</div>
+    <div class="verse-text">"The rabble among them had a strong craving... 'We remember the fish we ate in Egypt... there is nothing at all but this manna to look at.'... While the meat was yet between their teeth, before it was consumed, the anger of the Lord was kindled, and the Lord struck down the people with a very great plague."</div>
+  </div>
+  <p>The place was called <em>Kibroth-hattaavah</em> — "graves of craving." The craving for meat, not the manna, brought death. See Section 11 for the full modern parallel.</p>
+</div>
+
+<div class="sec">
+  <div class="sec-label">Section 4 — The diet test</div>
+  <h2>Daniel's plant-based experiment</h2>
+  <p>Daniel and his companions conducted what scholars have called one of history's first recorded controlled dietary experiments — and the results were decisive.</p>
+  <div class="verse">
+    <div class="verse-ref">Daniel 1:8, 12, 15, 17, 20</div>
+    <div class="verse-text">"But Daniel resolved that he would not defile himself with the king's food... 'Let us be given vegetables to eat and water to drink'... At the end of ten days they were better in appearance and fatter in flesh than all the young men who ate the king's food... God gave them learning and skill in all literature and wisdom... In every matter of wisdom and understanding, the king found them ten times better than all the magicians and enchanters in his whole kingdom."</div>
+  </div>
+  <div class="verse">
+    <div class="verse-ref">Daniel 10:2-3</div>
+    <div class="verse-text">"In those days I, Daniel, was mourning for three weeks. I ate no delicacies, no meat or wine came into my mouth... for the full three weeks."</div>
+  </div>
+  <div class="sci">
+    <div class="sci-label"><i class="ti ti-microscope" aria-hidden="true"></i> Science confirms</div>
+    <p>High-fat meals impair blood flow to the brain's prefrontal cortex — the seat of decision-making and moral reasoning — for up to 6-8 hours post-meal. Plant-based diets are consistently associated with better cognitive function, reduced risk of dementia, and lower rates of depression across large population studies. The Bible's connection between diet, mind, and spiritual receptivity has a neurological basis.</p>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-label">Section 5 — The prophetic vision</div>
+  <h2>Isaiah and Revelation: the future is plant-based</h2>
+  <p>Both the beginning and the end of the biblical story are plant-based. The restored creation God is working toward is a world without killing, without death, without suffering — where even formerly carnivorous animals return to plants.</p>
+  <div class="verse">
+    <div class="verse-ref">Isaiah 11:6-9</div>
+    <div class="verse-text">"The wolf shall dwell with the lamb, and the leopard shall lie down with the young goat... The cow and the bear shall graze; their young shall lie down together; and the lion shall eat straw like the ox... They shall not hurt or destroy in all my holy mountain; for the earth shall be full of the knowledge of the Lord."</div>
+  </div>
+  <div class="verse">
+    <div class="verse-ref">Isaiah 65:25</div>
+    <div class="verse-text">"The wolf and the lamb shall graze together; the lion shall eat straw like the ox... They shall not hurt or destroy in all my holy mountain, says the Lord."</div>
+  </div>
+  <div class="verse">
+    <div class="verse-ref">Revelation 21:4</div>
+    <div class="verse-text">"He will wipe every tear from their eyes. There will be no more death or mourning or crying or pain, for the old order of things has passed away."</div>
+  </div>
+  <div class="verse">
+    <div class="verse-ref">Revelation 22:1-2</div>
+    <div class="verse-text">"Then the angel showed me the river of the water of life, bright as crystal... also, on either side of the river, the tree of life with its twelve kinds of fruit, yielding its fruit each month. The leaves of the tree were for the healing of the nations."</div>
+  </div>
+  <p>The Bible begins in a vegan garden and ends in a vegan eternal city. A plant-based diet is alignment with where God's entire creation is heading.</p>
+</div>
+
+<div class="sec">
+  <div class="sec-label">Section 6 — New Testament</div>
+  <h2>New Testament: the body as temple</h2>
+  <p>The New Testament lays a theological foundation for dietary care through the body-as-temple principle, Jesus's personal concern for every individual creature, and the call to eat for God's glory.</p>
+  <div class="vgrid">
+    <div class="mv">
+      <div class="mv-r">1 Corinthians 6:19-20</div>
+      <div class="mv-t">"Your body is a temple of the Holy Spirit... glorify God in your body."</div>
+    </div>
+    <div class="mv">
+      <div class="mv-r">1 Corinthians 10:31</div>
+      <div class="mv-t">"Whether you eat or drink or whatever you do, do all to the glory of God."</div>
+    </div>
+    <div class="mv">
+      <div class="mv-r">Matthew 10:29</div>
+      <div class="mv-t">"Not one sparrow will fall to the ground apart from your Father."</div>
+    </div>
+    <div class="mv">
+      <div class="mv-r">Romans 14:21</div>
+      <div class="mv-t">"It is good not to eat meat or drink wine or do anything that causes your brother to stumble."</div>
+    </div>
+  </div>
+  <div class="verse">
+    <div class="verse-ref">John 10:11 — the Good Shepherd</div>
+    <div class="verse-text">"I am the good shepherd. The good shepherd lays down his life for the sheep."</div>
+  </div>
+  <p>The Good Shepherd — the most prominent leadership image in the entire Bible — is defined by personal knowledge of, sacrifice for, and protection of each individual animal. It is the opposite of an industrial model.</p>
+</div>
+
+<div class="sec">
+  <div class="sec-label">Section 7 — Wisdom literature</div>
+  <h2>Proverbs: ancient wisdom, modern resonance</h2>
+  <div class="verse">
+    <div class="verse-ref">Proverbs 12:10</div>
+    <div class="verse-text">"A righteous man cares for the needs of his animal, but the kindest acts of the wicked are cruel."</div>
+  </div>
+  <p>This verse sets a positive obligation — a righteous person actively <em>cares for the needs</em> of animals. By this standard, "free range," "cage-free," "grass-fed," and "organic" labels all fail on examination. Independent investigations consistently show these are marketing terms more than meaningful welfare standards.</p>
+  <div class="verse">
+    <div class="verse-ref">Proverbs 15:17</div>
+    <div class="verse-text">"Better is a dinner of herbs where love is than a fattened ox and hatred with it."</div>
+  </div>
+  <div class="verse">
+    <div class="verse-ref">Proverbs 23:20-21</div>
+    <div class="verse-text">"Be not among drunkards or among gluttonous eaters of meat, for the drunkard and the glutton will come to poverty, and slumber will clothe them with rags."</div>
+  </div>
+  <p>Applied at civilizational scale: routing plant nutrition through animal bodies before eating it converts extraordinary biological and agricultural wealth into short-term consumption — leaving ecological poverty, hunger, and disease in its wake.</p>
+</div>
+
+<div class="sec">
+  <div class="sec-label">Section 8 — The dominion question</div>
+  <h2>Dominion means stewardship, not exploitation</h2>
+  <p>The Hebrew word <em>radah</em> — translated "dominion" in Genesis 1:26-28 — describes the governance of a good king over his people: responsible, protective, and oriented toward the flourishing of those governed. It carries no implication of unlimited exploitation.</p>
+  <div class="info-box">
+    <p>Humans are given dominion precisely <em>because</em> they bear the image of God (<em>imago dei</em>). So the question is: what kind of ruler is God? Scripture answers clearly. God feeds every creature (Psalm 145:15-16). He notices every sparrow that falls (Matthew 10:29). He made a covenant with every living creature after the flood (Genesis 9:12). He is moved with compassion for the animals of Nineveh (Jonah 4:11). If human dominion is meant to mirror divine governance, it must be characterized by provision, protection, and care — not industrial-scale suffering. Anything else is not dominion. It is tyranny.</p>
+  </div>
+  <div class="verse">
+    <div class="verse-ref">Psalm 145:15-16</div>
+    <div class="verse-text">"The eyes of all look to you, and you give them their food in due season. You open your hand; you satisfy the desire of every living thing."</div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-label">Section 9 — Modern animal agriculture</div>
+  <h2>Biblical law vs. modern animal agriculture</h2>
+  <p>Strict observance of the Bible's own animal welfare provisions would make the current industrial food system economically impossible.</p>
+  <div class="vgrid">
+    <div class="mv">
+      <div class="mv-r">Exodus 23:12</div>
+      <div class="mv-t">Animals must rest one day in seven. Factory farming runs 24/7/365 under artificial lighting.</div>
+    </div>
+    <div class="mv">
+      <div class="mv-r">Deuteronomy 25:4</div>
+      <div class="mv-t">Do not muzzle the working ox. Animals have a right to eat from what they produce.</div>
+    </div>
+    <div class="mv">
+      <div class="mv-r">Leviticus 22:27-28</div>
+      <div class="mv-t">A newborn must remain with its mother seven days. Dairy calves are separated within hours of birth.</div>
+    </div>
+    <div class="mv">
+      <div class="mv-r">Deuteronomy 22:6-7</div>
+      <div class="mv-t">Do not take the mother with her young. Industrial egg farming separates hens from chicks on day one.</div>
+    </div>
+  </div>
+  <div class="sci">
+    <div class="sci-label"><i class="ti ti-alert-triangle" aria-hidden="true"></i> On "humane" labels</div>
+    <p>"Free range" legally requires only access to outdoors — no minimum space or time outside. "Cage-free" still packs tens of thousands of birds on warehouse floors. "Organic" does not prohibit beak trimming or overcrowding. "Grass-fed" became effectively unregulated when the USDA withdrew its standard in 2016. The economic structure of modern animal agriculture is fundamentally incompatible with the welfare obligations Scripture actually describes.</p>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-label">Section 10 — Modern science</div>
+  <h2>What modern science confirms</h2>
+  <p>The biblical case for plant-based living receives remarkable empirical support from nutrition science, epidemiology, environmental research, and public health data.</p>
+  <div class="stats">
+    <div class="stat">
+      <span class="stat-n">40%</span>
+      <div class="stat-l">Lower cataract risk in vegans vs. high meat eaters (Oxford, n=27,670)</div>
+    </div>
+    <div class="stat">
+      <span class="stat-n">77%</span>
+      <div class="stat-l">Of global farmland used for animal agriculture, producing only 18% of global calories</div>
+    </div>
+    <div class="stat">
+      <span class="stat-n">70%</span>
+      <div class="stat-l">Reduction in food-related greenhouse emissions possible with global plant-based shift (Nature, 2018)</div>
+    </div>
+    <div class="stat">
+      <span class="stat-n">800M</span>
+      <div class="stat-l">Additional people the US alone could feed by redirecting livestock crops to humans (Cornell)</div>
+    </div>
+  </div>
+  <div class="sci">
+    <div class="sci-label"><i class="ti ti-heart-rate-monitor" aria-hidden="true"></i> Health outcomes</div>
+    <p>Seventh-day Adventists in Loma Linda, California — predominantly vegetarian — are one of the world's five "Blue Zone" populations with the longest life expectancy in the United States. Consistent research across large cohort studies links plant-based diets to significantly reduced risk of heart disease, type 2 diabetes, several cancers, and all-cause mortality.</p>
+  </div>
+  <div class="sci">
+    <div class="sci-label"><i class="ti ti-world" aria-hidden="true"></i> Global food justice</div>
+    <p>The world produces approximately 1.5 times enough calories to feed every person on earth, yet 733 million people face hunger (UN FAO, 2023). Approximately 36% of global crop calories are fed to livestock. Proverbs 23:20-21 warned that the meat glutton comes to poverty — at civilizational scale, that is precisely what the data shows. We produce enough plants to feed 12 billion; we feed them to animals while millions starve.</p>
+  </div>
+  <div class="sci">
+    <div class="sci-label"><i class="ti ti-trees" aria-hidden="true"></i> Environmental stewardship</div>
+    <p>Approximately 80% of Amazon deforestation is driven by cattle ranching and soy production for animal feed. The pattern is consistent: forest cleared, soil degraded within years, land abandoned, more forest cleared — converting extraordinary biological wealth into desert. We are called to be <em>shamar</em> — guardians of creation. Animal agriculture is its most significant destroyer.</p>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-label-warn">Section 11 — Pandemics <span class="new-badge">New</span></div>
+  <h2>Pandemics: the biblical warning and modern science</h2>
+  <p>One of the most striking and often overlooked threads in Scripture is the direct connection between mass craving for meat, the practice of large-scale animal consumption, and plague. The Numbers 11 account is not just a story about disobedience — it is a precise foreshadowing of what modern epidemiology has confirmed about animal agriculture and pandemic disease.</p>
+
+  <div class="verse-danger">
+    <div class="verse-ref">Numbers 11:18-20, 31-34 — the quail plague</div>
+    <div class="verse-text">"Therefore the Lord will give you meat, and you shall eat. You shall not eat just one day, or two days... but a whole month, until it comes out at your nostrils and becomes loathsome to you... While the meat was yet between their teeth, before it was consumed, the anger of the Lord was kindled against the people, and the Lord struck down the people with a very great plague. Therefore the name of that place was called Kibroth-hattaavah — because there they buried the people who had the craving."</div>
+  </div>
+
+  <p>Note what the text says precisely: the plague struck <em>while the meat was still in their mouths</em>, and it targeted specifically those "who had the craving" — the most vocal, most insistent, most gluttonous consumers of meat. They did not even finish eating before death came.</p>
+
+  <div class="verse-danger">
+    <div class="verse-ref">Psalm 106:13-15 — the biblical authors' own interpretation</div>
+    <div class="verse-text">"But they soon forgot his works; they did not wait for his counsel. But they had a wanton craving in the wilderness, and put God to the test in the desert; he gave them what they asked, but sent a wasting disease among them."</div>
+  </div>
+
+  <p>Psalm 106 is not a retelling — it is a theological interpretation. The biblical authors looked back on Numbers 11 and drew the lesson explicitly: demand meat, receive disease. This is the inspired, canonical reading of that event. It is not a modern projection.</p>
+
+  <div class="warn-box">
+    <div class="warn-label"><i class="ti ti-quote" aria-hidden="true"></i> The most prophetically accurate verse in the dietary debate</div>
+    <p>"He gave them what they asked, but sent a wasting disease among them." — Psalm 106:15. We asked for a global industrial meat system. We built it. And with it came H1N1, H5N1, SARS, MERS, and COVID-19.</p>
+  </div>
+
+  <h2 style="font-family:'Lora',Georgia,serif;font-size:1.1rem;font-weight:500;color:var(--color-text-primary);margin:1.25rem 0 .7rem">Modern pandemics and animal agriculture</h2>
+  <p>The scientific consensus on zoonotic disease — disease that jumps from animals to humans — aligns with striking precision to the biblical pattern. Approximately 60% of all known infectious diseases in humans originated in animals, and 75% of all emerging infectious diseases are zoonotic in origin (CDC, WHO).</p>
+
+  <div class="stats">
+    <div class="stat">
+      <span class="stat-n-warn">60%</span>
+      <div class="stat-l">Of all known human infectious diseases originated in animals (CDC)</div>
+    </div>
+    <div class="stat">
+      <span class="stat-n-warn">75%</span>
+      <div class="stat-l">Of all emerging infectious diseases are zoonotic in origin (WHO)</div>
+    </div>
+    <div class="stat">
+      <span class="stat-n-warn">1B+</span>
+      <div class="stat-l">People affected by zoonotic diseases annually worldwide</div>
+    </div>
+    <div class="stat">
+      <span class="stat-n-warn">50M+</span>
+      <div class="stat-l">Deaths in the 1918 influenza pandemic — traced to avian-swine animal agriculture interface</div>
+    </div>
+  </div>
+
+  <p>Every major pandemic of the last century has been traced to the human-animal interface that animal agriculture creates and maintains at industrial scale:</p>
+
+  <div style="margin:.875rem 0;border:.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:.25rem .875rem">
+    <div class="pandemic-row">
+      <div class="p-badge">1918 flu</div>
+      <div class="p-text"><strong>Spanish Flu — 50-100 million deaths.</strong> Traced to avian origins, adapted through pig populations in intensive farming conditions. Still the deadliest infectious disease event in recorded history.</div>
+    </div>
+    <div class="pandemic-row">
+      <div class="p-badge">H5N1</div>
+      <div class="p-text"><strong>Bird flu.</strong> Emerged from industrial poultry operations in Asia. The 2024-2025 outbreak in US dairy cattle represents the feared mammalian adaptation — the virus learning to infect mammals efficiently, edging toward human-to-human transmission.</div>
+    </div>
+    <div class="pandemic-row">
+      <div class="p-badge">2009 flu</div>
+      <div class="p-text"><strong>Swine flu.</strong> Originated in large-scale industrial hog operations in North America and Asia. A direct product of the conditions factory farming creates for viral evolution.</div>
+    </div>
+    <div class="pandemic-row">
+      <div class="p-badge">SARS / MERS</div>
+      <div class="p-text"><strong>SARS-CoV-1 and MERS.</strong> Both traced to animal reservoirs — bats and civets (SARS), dromedary camels (MERS) — through the human-animal interface the animal agriculture and wildlife trade system creates.</div>
+    </div>
+    <div class="pandemic-row">
+      <div class="p-badge">COVID-19</div>
+      <div class="p-text"><strong>SARS-CoV-2.</strong> Scientific consensus points to zoonotic spillover from animal reservoirs. The conditions enabling its emergence and catastrophic global spread are the conditions industrial animal agriculture maintains at planetary scale.</div>
+    </div>
+  </div>
+
+  <div class="danger-box">
+    <div class="danger-label"><i class="ti ti-virus" aria-hidden="true"></i> Why factory farming is a pandemic factory</div>
+    <p>Dr. Michael Greger MD (NutritionFacts.org) has documented this mechanism comprehensively. Factory farms pack thousands of genetically similar, immunologically stressed animals into confined spaces — creating optimal conditions for rapid viral spread, mutation, and adaptation. Genetic uniformity means a virus that exploits one vulnerability exploits all. Before industrial animal agriculture (pre-1950), novel pandemic strains emerged approximately once per generation. Since industrialization, the emergence rate has accelerated dramatically. His conclusion: <em>"If you wanted to design a system to create pandemic influenza viruses, you could not do better than factory farming."</em></p>
+  </div>
+
+  <div class="warn-box">
+    <div class="warn-label"><i class="ti ti-book" aria-hidden="true"></i> The parallel is precise</div>
+    <p>The Israelites at Kibroth-hattaavah craved birds (quail), consumed them in mass quantities under conditions of frenzy and gluttony, and died of a plague that struck while the meat was still in their mouths — targeting the most insistent consumers first. Modern industrial poultry farming created H5N1 bird flu and contributed to the conditions behind the 1918 pandemic that killed up to 100 million people. The biblical warning was not primitive superstition. It was an accurate observation — now understood mechanistically — that mass animal consumption creates plague. The ancient text and modern epidemiology tell the same story.</p>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-label">The full picture</div>
+  <h2>The biblical arc: from Eden to the New Jerusalem</h2>
+  <div class="arc-item">
+    <div class="arc-icon"><i class="ti ti-plant" aria-hidden="true"></i></div>
+    <div><div class="arc-t">Eden — plant-based creation</div><div class="arc-d">Genesis 1:29-30. Humans and all animals eat only plants. God calls it "very good."</div></div>
+  </div>
+  <div class="arc-item">
+    <div class="arc-icon"><i class="ti ti-wheat" aria-hidden="true"></i></div>
+    <div><div class="arc-t">Post-fall — expanded plant diet</div><div class="arc-d">Genesis 3:17-18. God adds grains and legumes. Still no meat. Exercise is added too.</div></div>
+  </div>
+  <div class="arc-item">
+    <div class="arc-icon"><i class="ti ti-bread" aria-hidden="true"></i></div>
+    <div><div class="arc-t">Wilderness — God's provision is grain</div><div class="arc-d">Exodus 16. Manna — "grain of heaven" — is God's chosen food for His people.</div></div>
+  </div>
+  <div class="arc-item">
+    <div class="arc-icon"><i class="ti ti-alert-circle" aria-hidden="true"></i></div>
+    <div><div class="arc-t">Concession — meat permitted, not celebrated</div><div class="arc-d">Genesis 9:3. Post-flood meat permission is accompanied by declining lifespans, strict welfare laws, and plague when abused.</div></div>
+  </div>
+  <div class="arc-item">
+    <div class="arc-icon"><i class="ti ti-virus-off" aria-hidden="true"></i></div>
+    <div><div class="arc-t">Kibroth-hattaavah — graves of craving</div><div class="arc-d">Numbers 11, Psalm 106:15. Mass demand for meat produces plague. The biblical authors draw this lesson explicitly.</div></div>
+  </div>
+  <div class="arc-item">
+    <div class="arc-icon"><i class="ti ti-book" aria-hidden="true"></i></div>
+    <div><div class="arc-t">Daniel's testimony — plants produce excellence</div><div class="arc-d">Daniel 1. Ten days of vegetables and water: superior health, ten times the wisdom.</div></div>
+  </div>
+  <div class="arc-item">
+    <div class="arc-icon"><i class="ti ti-sun" aria-hidden="true"></i></div>
+    <div><div class="arc-t">New creation — all creatures plant-based again</div><div class="arc-d">Isaiah 11:6-9, Revelation 22. The lion eats straw. No more death. No more pain. The Tree of Life feeds the nations.</div></div>
+  </div>
+</div>
+
+<div class="cta">
+  <h2>A closing word</h2>
+  <p>Choosing a plant-based diet is not merely a health decision or an environmental preference. For people of faith, it is alignment with God's original design, respect for the bodies we are called to steward, compassion for the creatures we are called to guard, solidarity with the humans who go hungry while grain is fed to animals, and — as Kibroth-hattaavah and every modern pandemic remind us — protection of the whole of humanity from the diseases that mass animal consumption creates.</p>
+  <p style="margin-top:.75rem;font-style:italic;font-size:13px;color:var(--color-text-secondary)">"He gave them what they asked, but sent a wasting disease among them." — Psalm 106:15</p>
+  <p style="margin-top:.5rem;font-style:italic;font-size:13px;color:var(--color-text-secondary)">"We are simply cooperating with God in what He has always wanted and has been very clear about." — Dr. Milton Mills MD, Stanford University School of Medicine</p>
+</div>
+
+<div class="footer">
+  <p>Compiled from Scripture, the teaching of Dr. Milton Mills, the research of Dr. Michael Greger, and peer-reviewed research in nutrition science, environmental studies, epidemiology, and public health.</p>
+  <p style="margin-top:5px">Key sources: Oxford EPIC study (2011) · Nature Food Systems Analysis (2018) · World Resources Institute (2019) · UN FAO (2023) · Cornell University Food Policy Research · CDC/WHO Zoonotic Disease Reports · Dr. Milton Mills, "What the Bible Says About Plant-Based Diets and Animal Rights" · Dr. Michael Greger, "Bird Flu: A Virus of Our Own Hatching"</p>
+</div>
+
+</div>
